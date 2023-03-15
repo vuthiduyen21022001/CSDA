@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebsiteNhacOnl.Models.TaiNhac>
+
+@{
+    ViewBag.Title = "Tải Nhạc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous">
+<link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css”>
+
+
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNhac)
+            </td>
+
+            <td>
+                @Html.Raw(@Html.ActionLink("[replacetext]", "Details", new { id = item.Id }).ToHtmlString().Replace("[replacetext]", " <img src=\"/Content/images/imgweb/icon-xem-chi-tiet.png\" height=\"28\">")) |
+                <b class="fa fa-download">
+                    @Html.ActionLink("Tải Về", "Download", new { fileName = item.File })
+                </b>
+            </td>
+        </tr>
+    }
+
+</table>

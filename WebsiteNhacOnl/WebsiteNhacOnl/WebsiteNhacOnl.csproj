@@ -1,0 +1,1076 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6247734B-9C1E-43F4-ACC2-A9B757616557}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebsiteNhacOnl</RootNamespace>
+    <AssemblyName>WebsiteNhacOnl</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44395</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\adBaiHatsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\adTheLoaisController.cs" />
+    <Compile Include="Areas\Admin\Controllers\adTaiNhacsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\adPhanHoiNDsController.cs" />
+    <Compile Include="Areas\Report\CrystalReportBH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportBH.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Areas\Report\CrystalReportND.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportND.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Areas\Report\CrystalReportTN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportTN.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaiHatsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PhanHoiNDsController.cs" />
+    <Compile Include="Controllers\TaiNhacsController.cs" />
+    <Compile Include="Controllers\TheLoaisController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205241534010_InitialModel.cs" />
+    <Compile Include="Migrations\202205241534010_InitialModel.Designer.cs">
+      <DependentUpon>202205241534010_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205241539224_TableNhacTheLoai.cs" />
+    <Compile Include="Migrations\202205241539224_TableNhacTheLoai.Designer.cs">
+      <DependentUpon>202205241539224_TableNhacTheLoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205241632135_TableTaiNhac.cs" />
+    <Compile Include="Migrations\202205241632135_TableTaiNhac.Designer.cs">
+      <DependentUpon>202205241632135_TableTaiNhac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205271306163_TablePhanHoiNguoiDung.cs" />
+    <Compile Include="Migrations\202205271306163_TablePhanHoiNguoiDung.Designer.cs">
+      <DependentUpon>202205271306163_TablePhanHoiNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BaiHat.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PhanHoiND.cs" />
+    <Compile Include="Models\TaiNhac.cs" />
+    <Compile Include="Models\TheLoai.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\ContentAd\assets\images\big\img1.jpg" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\custom-select.png" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\favicon.png" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\logo-icon.png" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\logo-light-icon.png" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\logo-light-text.png" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\logo-text.png" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\users\1.jpg" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\users\2.jpg" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\users\3.jpg" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\users\4.jpg" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\users\5.jpg" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\users\6.jpg" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\users\7.jpg" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\users\8.jpg" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\js\bootstrap.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\c3.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\c3.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\c3.min.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\c3.min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\extensions\chart-bubble\bubble.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\extensions\chart-bubble\c3.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\extensions\chart-bubble\c3.min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\extensions\chart-bubble\index.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\extensions\exporter\phantom-exporter.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\extensions\exporter\test.png" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\extensions\js\c3ext.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\css\c3.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\css\index.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\css\style.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\index.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\js\c3.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\js\c3.min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\js\require.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\js\samples\plugin.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\js\samples\requirejs.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\js\samples\zoom_reduction.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\api_axis_label.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\api_axis_range.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\api_category.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\api_data_colors.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\api_flow.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\api_flow_timeseries.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\api_legend.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\api_tooltip_show.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\api_transform.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\api_xgrid_lines.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\api_ygrid_lines.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\area_zerobased.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\axes_padding.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\axes_range.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\axes_x_extent.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\axes_x_localtime.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\axes_x_range_timeseries.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\axes_x_tick_culling.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\axes_x_tick_fit.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\axes_x_tick_rotate.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\axes_x_tick_values.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\axes_y2.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\axes_y_default.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\bar_zerobased.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\bindto.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\categorized.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_area.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_area_spline.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_area_spline_stacked.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_area_stacked.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_area_step.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_area_step_stacked.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_bar.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_bar_space.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_bar_stacked.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_combination.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_donut.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_gauge.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_pie.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_pie_sort.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_scatter.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_spline.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_step.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\chart_step_category.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\custom_xs_scale.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\custom_x_categorized.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\custom_x_scale.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\data_columned.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\data_hide.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\data_json.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\data_label.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\data_label_format.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\data_load.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\data_load_timeseries.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\data_region.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\data_region_timeseries.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\data_rowed.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\data_url.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\different_category_datasets.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\domain_y.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\element.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\emptydata.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\grids.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\grids_timeseries.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\grid_focus.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\grid_x_lines.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\grid_x_lines_timeseries.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\interaction_enabled.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\legend.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\padding.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\padding_update.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\plugin.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\point_r.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\point_show.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\regions.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\regions_timeseries.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\requirejs.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\selection.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\simple.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\subchart.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\subchart_onbrush.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\timeseries.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\timeseries_date.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\timeseries_descendent.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\timeseries_raw.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\tooltip_grouped.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\tooltip_show.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\zoom.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\zoom_category.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\zoom_onzoom.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\samples\zoom_reduction.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\karma.conf.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\rollup.config.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\api.axis-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\api.data-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\api.focus-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\api.grid-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\api.load-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\api.region-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\api.zoom-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\arc-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\axis-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\c3-helper.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\c3-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\class-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\core-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\data-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\data.convert.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\domain-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\grid-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\interaction-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\legend-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\shape.bar-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\shape.line-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\svg-helper.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\title-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\tooltip-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\type-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\spec\zoom-spec.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.axis.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.category.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.chart.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.color.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.data.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.flow.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.focus.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.grid.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.group.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.legend.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.load.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.region.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.selection.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.show.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.tooltip.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.transform.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.x.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\api.zoom.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\arc.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\axis.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\cache.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\category.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\class-utils.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\class.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\clip.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\color.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\config.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\core.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\data.convert.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\data.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\data.load.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\domain.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\drag.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\format.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\grid.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\index.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\interaction.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\legend.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\polyfill.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\region.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scale.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\selection.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\shape.bar.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\shape.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\shape.line.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\size.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\subchart.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\text.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\title.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\tooltip.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\type.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\ua.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\util.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\zoom.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\d3\d3.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\d3\d3.min-v4.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\d3\d3.min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\gmaps.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\gmaps.min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\jquery.gmaps.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.controls.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.core.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.events.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.geofences.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.geometry.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.layers.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.map_types.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.markers.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.native_extensions.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.overlays.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.routes.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.static.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.streetview.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.styles.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\lib\gmaps.utils.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\jquery\jquery.min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\area-as-line.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\area.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\bar-colors.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\bar-no-axes.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\bar.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\days.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\decimal-custom-hover.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\diagonal-xlabels-bar.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\diagonal-xlabels.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\donut-colors.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\donut-formatter.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\donut.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\dst.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\events.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\goals.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\lib\example.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\lib\example.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\months-no-smooth.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\negative.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\no-grid.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\non-continuous.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\non-date.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\quarters.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\resize.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\stacked_bars.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\timestamps.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\updating.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\weeks.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\years.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\examples\_template.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\Gruntfile.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\morris.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\morris.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\morris.min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\specs.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\viz\examples.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\viz\exemplary\area0.png" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\viz\exemplary\bar0.png" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\viz\exemplary\line0.png" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\viz\exemplary\stacked_bar0.png" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\viz\test.html" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\viz\visual_specs.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\peity\jquery.peity.init.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\peity\jquery.peity.min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\perfect-scrollbar\css\perfect-scrollbar.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\perfect-scrollbar\css\perfect-scrollbar.min.css" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\perfect-scrollbar\js\perfect-scrollbar.jquery.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\perfect-scrollbar\js\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\perfect-scrollbar\js\perfect-scrollbar.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\perfect-scrollbar\js\perfect-scrollbar.min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\raphael\dev\amdDev.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\raphael\dev\index.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\raphael\dev\require.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\raphael\license.txt" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\raphael\raphael-min.js" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\raphael\raphael.js" />
+    <Content Include="Areas\Admin\ContentAd\css\animate.css" />
+    <Content Include="Areas\Admin\ContentAd\css\colors\default.css" />
+    <Content Include="Areas\Admin\ContentAd\css\icons\font-awesome\css\font-awesome.css" />
+    <Content Include="Areas\Admin\ContentAd\css\icons\font-awesome\old\css\font-awesome.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\bootstrap-switch.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\breadcrumb-page.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\card-page.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\chat-app-page.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\common.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\contact-app-page.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\dashboard1.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\easy-pie-chart.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\error-pages.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\file-upload.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\float-chart.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\floating-label.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\footable-page.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\form-icheck.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\form-pages.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\google-vector-map.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\icon-page.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\inbox.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\login-register-lock.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\other-pages.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\pages.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\pagination.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\perfect-scrollbar.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\pricing-page.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\progressbar-page.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\ribbon-page.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\stylish-tooltip.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\tab-page.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\table-pages.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\timeline-vertical-horizontal.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\ui-bootstrap-page.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\user-card.css" />
+    <Content Include="Areas\Admin\ContentAd\css\pages\widget-page.css" />
+    <Content Include="Areas\Admin\ContentAd\css\spinners.css" />
+    <Content Include="Areas\Admin\ContentAd\css\style.css" />
+    <Content Include="Areas\Admin\ContentAd\js\custom.js" />
+    <Content Include="Areas\Admin\ContentAd\js\custom.min.js" />
+    <Content Include="Areas\Admin\ContentAd\js\dashboard1.js" />
+    <Content Include="Areas\Admin\ContentAd\js\flot-data.js" />
+    <Content Include="Areas\Admin\ContentAd\js\jquery.slimscroll.js" />
+    <Content Include="Areas\Admin\ContentAd\js\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Areas\Admin\ContentAd\js\sidebarmenu.js" />
+    <Content Include="Areas\Admin\ContentAd\js\waves.js" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\css\font-awesome.css" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\css\font-awesome.css" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\css\font-awesome.min.css" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\HELP-US-OUT.txt" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CSS\StyleDetails.css" />
+    <Content Include="Content\CSS\StyleLayout.css" />
+    <Content Include="Content\CSS\StyleLayoutAdmin.css" />
+    <Content Include="Content\CSS\StyleLogin.css" />
+    <Content Include="Content\CSS\StylePlayMusic.css" />
+    <Content Include="Content\CSS\StyleRender.css" />
+    <Content Include="Content\imagehover.min.css" />
+    <Content Include="Content\images\bn_pho-da-len-den.jpg" />
+    <Content Include="Content\images\damcuoi.jpg" />
+    <Content Include="Content\images\imgweb\1.png" />
+    <Content Include="Content\images\imgweb\2.png" />
+    <Content Include="Content\images\imgweb\3.png" />
+    <Content Include="Content\images\imgweb\banner1.jpg" />
+    <Content Include="Content\images\imgweb\banner2.jpg" />
+    <Content Include="Content\images\imgweb\banner3.jpg" />
+    <Content Include="Content\images\imgweb\bg-play.gif" />
+    <Content Include="Content\images\imgweb\bg1 %282%29.jpg" />
+    <Content Include="Content\images\imgweb\bglogin.jpg" />
+    <Content Include="Content\images\imgweb\bn_kem-duyen-2.jpg" />
+    <Content Include="Content\images\imgweb\Download1.png" />
+    <Content Include="Content\images\emoilenpho_MinhVuongM4U.jpg" />
+    <Content Include="Content\images\imgweb\hot-1.gif" />
+    <Content Include="Content\images\imgweb\icon-moi.gif" />
+    <Content Include="Content\images\imgweb\icon-xem-chi-tiet.png" />
+    <Content Include="Content\images\imgweb\icon-xem-chi-tiet1.png" />
+    <Content Include="Content\images\imgweb\logotitle.png" />
+    <Content Include="Content\images\imgweb\play.png" />
+    <Content Include="Content\images\imgweb\TaiVe.png" />
+    <Content Include="Content\images\Jack_HongNhan.jpg" />
+    <Content Include="Content\images\thatgril.jpg" />
+    <Content Include="Content\images\imgweb\Them.png" />
+    <Content Include="Content\images\imgweb\delete.png" />
+    <Content Include="Content\images\imgweb\details.png" />
+    <Content Include="Content\images\imgweb\download.png" />
+    <Content Include="Content\images\imgweb\edit.png" />
+    <Content Include="Content\images\imgweb\icon_nhac_audio.jpg" />
+    <Content Include="Content\images\imgweb\logo1-.png" />
+    <Content Include="Content\images\imgweb\search_icon.png" />
+    <Content Include="Content\JS\Layout.js" />
+    <Content Include="Content\LayoutAd\assets\demo\chart-area-demo.js" />
+    <Content Include="Content\LayoutAd\assets\demo\chart-bar-demo.js" />
+    <Content Include="Content\LayoutAd\assets\demo\chart-pie-demo.js" />
+    <Content Include="Content\LayoutAd\assets\demo\datatables-demo.js" />
+    <Content Include="Content\LayoutAd\assets\img\error-404-monochrome.svg" />
+    <Content Include="Content\LayoutAd\css\styles.css" />
+    <Content Include="Content\LayoutAd\js\datatables-simple-demo.js" />
+    <Content Include="Content\LayoutAd\js\scripts.js" />
+    <Content Include="Content\Layout\images\amy.jpg" />
+    <Content Include="Content\Layout\images\daniel.jpg" />
+    <Content Include="Content\Layout\images\favicon-16x16.png" />
+    <Content Include="Content\Layout\images\favicon-32x32.png" />
+    <Content Include="Content\Layout\images\favicon.ico" />
+    <Content Include="Content\Layout\images\john-doe.jpg" />
+    <Content Include="Content\Layout\images\left-chevron.png" />
+    <Content Include="Content\Layout\images\logo16x16.png" />
+    <Content Include="Content\Layout\images\logo32x32.png" />
+    <Content Include="Content\Layout\images\p-five.jpeg" />
+    <Content Include="Content\Layout\images\p-four.jpeg" />
+    <Content Include="Content\Layout\images\p-six.jpeg" />
+    <Content Include="Content\Layout\images\p-three.jpeg" />
+    <Content Include="Content\Layout\images\p-two.jpeg" />
+    <Content Include="Content\Layout\images\right-chevron.png" />
+    <Content Include="Content\Layout\images\sarah.jpg" />
+    <Content Include="Content\Layout\images\tangelia.jpg" />
+    <Content Include="Content\Layout\scripts\all-plugins.js" />
+    <Content Include="Content\Layout\scripts\jquery-3.2.1.min.js" />
+    <Content Include="Content\Layout\scripts\plugins-activate.js" />
+    <Content Include="Content\Layout\styles\custom-responsive-styles.css" />
+    <Content Include="Content\Layout\styles\styles.css" />
+    <Content Include="Content\music\Dam-Cuoi-Nha-Hong-Thanh-DJ-Mie.mp3" />
+    <Content Include="Content\music\Em-Oi-Len-Pho-Minh-Vuong-M4U.mp3" />
+    <Content Include="Content\music\ThatGril.mp3" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\adBaiHats\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\adBaiHats\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\adBaiHats\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\adBaiHats\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\adBaiHats\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\adTheLoais\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\adTheLoais\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\adTheLoais\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\adTheLoais\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\adTheLoais\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\adTaiNhacs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\adTaiNhacs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\adTaiNhacs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\adTaiNhacs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\adTaiNhacs\Index.cshtml" />
+    <Content Include="Areas\Admin\ContentAd\css\.DS_Store" />
+    <Content Include="Areas\Admin\ContentAd\js\.DS_Store" />
+    <Content Include="Areas\Admin\ContentAd\scss\.DS_Store" />
+    <Content Include="Areas\Admin\ContentAd\scss\app.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\colors\default.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\grid.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\animated.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\core.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\fixed-width.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\font-awesome.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\icons.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\larger.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\list.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\mixins.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\path.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\screen-reader.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\stacked.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\less\variables.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\.bower.json" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\.gitignore" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\.npmignore" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\bower.json" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\fonts\fontawesome-webfont-old.ttf" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\animated.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\bordered-pulled.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\core.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\extras.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\fixed-width.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\font-awesome.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\icons.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\larger.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\list.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\mixins.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\path.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\rotated-flipped.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\spinning.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\stacked.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\less\variables.less" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\font-awesome.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_animated.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_bordered-pulled.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_core.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_extras.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_fixed-width.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_icons.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_larger.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_list.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_mixins.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_path.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_rotated-flipped.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_spinning.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_stacked.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\old\scss\_variables.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\_animated.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\_core.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\_icons.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\_larger.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\_list.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\_mixins.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\_path.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\_stacked.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\icons\font-awesome\scss\_variables.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\bootstrap-switch.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\breadcrumb-page.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\button-page.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\card-page.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\chat-app-page.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\common.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\contact-app-page.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\dashboard1.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\easy-pie-chart.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\error-pages.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\file-upload.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\float-chart.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\floating-label.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\footable-page.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\form-icheck.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\form-pages.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\google-vector-map.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\icon-page.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\other-pages.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\pages.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\pagination.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\perfect-scrollbar.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\pricing-page.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\stylish-tooltip.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\pages\table-pages.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\responsive.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\sidebar.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\style.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\variable.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\widgets\blog.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\widgets\comment.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\widgets\common-widget.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\widgets\feed.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\widgets\msg-box.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\widgets\profile.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\widgets\topbar-mail.scss" />
+    <Content Include="Areas\Admin\ContentAd\scss\widgets\widgets.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\.DS_Store" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\.DS_Store" />
+    <Content Include="Areas\Admin\ContentAd\assets\images\big\Thumbs.db" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\.DS_Store" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\.DS_Store" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\.bmp.yml" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\.circleci\config.yml" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\.editorconfig" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\.gitignore" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\.jshintrc" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\.travis.yml" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\bower.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\codecov.yml" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\component.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\CONTRIBUTING.md" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\extensions\exporter\config.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\data\c3_test.csv" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\data\c3_test.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\data\c3_test.tsv" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\data\c3_test2.csv" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\data\c3_test2_ts.csv" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\data\c3_test3.csv" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\data\c3_test_2.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\data\c3_test_3.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\data\c3_test_ts.csv" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\htdocs\js\extensions" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\LICENSE" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\package-lock.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\package.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\README.md" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\arc.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\area.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\axis.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\bar.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\brush.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\chart.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\focus.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\grid.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\legend.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\line.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\main.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\point.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\region.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\select_drag.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\text.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\title.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\c3-master\src\scss\tooltip.scss" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\d3\API.md" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\d3\CHANGES.md" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\d3\LICENSE" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\d3\README.md" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\gmaps\gmaps.min.js.map" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\.bower.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\.gitignore" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\.travis.yml" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\bower.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\bower.travis.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\less\morris.core.less" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\lib\morris.area.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\lib\morris.bar.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\lib\morris.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\lib\morris.donut.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\lib\morris.grid.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\lib\morris.hover.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\lib\morris.line.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\package.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\README.md" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\lib\area\area_spec.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\lib\bar\bar_spec.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\lib\bar\colours.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\lib\commas_spec.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\lib\donut\donut_spec.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\lib\grid\auto_grid_lines_spec.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\lib\grid\set_data_spec.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\lib\grid\y_label_format_spec.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\lib\hover_spec.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\lib\label_series_spec.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\lib\line\line_spec.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\lib\pad_spec.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\lib\parse_time_spec.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\support\placeholder.coffee" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\morrisjs\spec\viz\run.sh" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\raphael\.bower.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\node_modules\raphael\bower.json" />
+    <Content Include="Areas\Admin\ContentAd\assets\package.json" />
+    <Content Include="Areas\Admin\Views\adPhanHoiNDs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\adPhanHoiNDs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\adPhanHoiNDs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\adBaiHats\adreport.cshtml" />
+    <Content Include="Areas\Admin\Views\adTaiNhacs\adreport.cshtml" />
+    <Content Include="Areas\Admin\Views\adPhanHoiNDs\adreport.cshtml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\BaiHats\Details.cshtml" />
+    <Content Include="Views\BaiHats\Index.cshtml" />
+    <Content Include="Views\TheLoais\Index.cshtml" />
+    <Content Include="Views\TaiNhacs\Details.cshtml" />
+    <Content Include="Views\TaiNhacs\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\BaiHats\NhacTheoTheLoai.cshtml" />
+    <Content Include="Views\PhanHoiNDs\Create.cshtml" />
+    <Content Include="Views\Shared\_Layoutlogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Content\file\" />
+    <Folder Include="Content\video\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Areas\Report\CrystalReportBH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportBH.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Report\CrystalReportND.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportND.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Report\CrystalReportTN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportTN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205241534010_InitialModel.resx">
+      <DependentUpon>202205241534010_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205241539224_TableNhacTheLoai.resx">
+      <DependentUpon>202205241539224_TableNhacTheLoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205241632135_TableTaiNhac.resx">
+      <DependentUpon>202205241632135_TableTaiNhac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205271306163_TablePhanHoiNguoiDung.resx">
+      <DependentUpon>202205271306163_TablePhanHoiNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60804</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44395/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

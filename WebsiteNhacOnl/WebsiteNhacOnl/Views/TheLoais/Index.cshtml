@@ -1,0 +1,25 @@
+﻿
+@model IEnumerable<WebsiteNhacOnl.Models.TheLoai>
+@{
+    ViewBag.Title = "Thể loại";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h2>Thể loại bài hát</h2>
+
+
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Url.Action("NhacTheoTheLoai","BaiHats",new { id = item.Id})" class="list-group-item">
+
+                    @Html.DisplayFor(modelItem => item.TenTL)
+                </a>
+            </td>
+
+        </tr>
+    }
+
+</table>

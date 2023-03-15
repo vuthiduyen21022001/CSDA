@@ -1,0 +1,244 @@
+﻿@model IEnumerable<WebsiteNhacOnl.Models.BaiHat>
+
+@{
+    ViewBag.Title = "Trang Chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css”>
+<link href="~/Content/imagehover.min.css" rel="stylesheet" />
+
+<link href="~/Content/CSS/StylePlayMusic.css" rel="stylesheet" />
+<script src="~/Content/JS/PlayMusic.js"></script>
+<link href="~/Content/CSS/StyleRender.css" rel="stylesheet" />
+
+<div class="container">
+    <h2 class="text-center" style="font-size: 30px; color: dodgerblue">
+        Top 5 bài hát mới<span class="badge bg-secondary"></span>
+        <img src="~/Content/images/imgweb/icon-moi.gif" />
+    </h2>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            @foreach (var item in Model)
+            {
+                <div class="musicSong" onclick="setMusicPlay('/Content/music/@item.UrlBH', '@item.HinhAnhBH', '@item.TenBH', '@item.CaSi')">
+                    <div class="row">
+                        <div class="col-md-2 " style="padding: 10px 1px 1px 1px; text-align: left ">
+                            <figure class="imghvr-push-up">
+                                <img src="@Html.DisplayFor(modelItem => item.HinhAnhBH)" style=" width:60px; height:60px " alt="example-image">
+                                <figcaption>
+                                    <img src="~/Content/images/imgweb/play.png" style=" width:60px; height:60px " />
+                                </figcaption><a href="javascript:;"></a>
+                            </figure>
+                        </div>
+                        <div class="col-md-3" style=" font-family: Times New Roman, Times, serif; padding: 1px 1px 1px 2px">
+                            <h4 style="color: dodgerblue"> @Html.DisplayFor(modelItem => item.TenBH) </h4>
+                            <i>(@Html.DisplayFor(modelItem => item.CaSi)) <br /></i>
+                            @Html.Raw(@Html.ActionLink("[replacetext]", "Details", new { id = item.Id }).ToHtmlString().Replace("[replacetext]", " <img src=\"/Content/images/imgweb/icon-xem-chi-tiet.png\" height=\"28\">"))
+                        </div>
+                        <div class="col-md-2 p-3" style="padding: 1px 1px 1px 1px; text-align: left">
+                            <b class="fa fa-download">
+                                @Html.ActionLink("Tải Về", "Download", new { fileName = item.UrlBH })
+                            </b>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function setMusicPlay(musicUrl, imgURL, nameSong, singerSong) {
+                        var audio = document.getElementById("audio");
+                        var image = document.getElementById("showI");
+                        var name = document.getElementById("showN");
+                        var singer = document.getElementById("showS");
+
+                        audio.src = musicUrl;
+                        image.src = imgURL;
+                        name.innerText = nameSong;
+                        singer.innerHTML = singerSong;
+                    }
+                </script>
+            }
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6" style="border-left: 4px solid; background-image: url('../../Content/images/imgweb/bg-play.gif'); border-radius: 12px; text-align: left;position: absolute; left:660px ">
+            <div id="playMusic">
+                <div id="show">
+                    <div id="musicDisc" style="width: 220px; height: 300px">
+                        <div style=" position: absolute; top: 180px; left: 0;">
+                            <img id="showI" src="~/Content/images/imgweb/icon_nhac_audio.jpg" style="width: 155px; height: 140px; border-radius: 12px;" />
+                        </div>
+                        <div id="musicInfo" style="border-left: 2px solid dodgerblue ; border-radius: 10px;color:#ad50de; position: absolute; top: 250px; left: 170px ">
+                            <div style="background:#000000">
+                                <b class="fa fa-music" id="showN" style="font-size: 20px;"></b>
+                                <br />
+                                <i class="fa fa-music" id="showS" style="font-size: 16px"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="border: 2px solid dodgerblue; border-radius: 12px; background-color: #090c93 ">
+                        <div class="progress" style="height:40px ;width:100%">
+                            <audio style="width: 100%; height: 40px; " id="audio" preload="auto" autoplay="true" loop="true" controls>
+                                <source src="~/Content/music/a.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div style="background-color: transparent; position: absolute; right: 30px; ">
+            <figure class="imghvr-push-up">
+                <img src="~/Content/images/imgweb/Download1.png" style=" width:160px; height:80px " />
+                <figcaption>
+                    <a href="@Url.Action("Index","TaiNhacs")" class="list-group-item">
+                        <img src="~/Content/images/imgweb/download.png" style=" width: 160px; height: 80px; padding-top: 0px; padding-bottom: 0px;"  />
+                    </a>
+                </figcaption><a href="javascript:;"></a>
+            </figure>
+
+        </div>
+    </div>
+  
+
+    <section id="Services" class="content-section text-center">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-center">Nhạc <span class="badge bg-secondary">Hot</span> </h2>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="service-box">
+                        <div class="service-icon yellow">
+                            <div class="front-content">
+                                <h2>Hồng nhan <span class="badge bg-secondary" style="color:red">  <img src="~/Content/images/imgweb/hot-1.gif" /></span> </h2>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <a href="~/Content/music/Hong-Nhan-Jack.mp3">
+                                <img src="~/Content/images/Jack_HongNhan.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="service-box">
+                        <div class="service-icon orange">
+                            <div >
+                                <h2>Em ơi lên phố <span class="badge bg-secondary" style="color:red">  <img src="~/Content/images/imgweb/hot-1.gif" /></span> </h2>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <a href=" ~/Content/music/Em-Oi-Len-Pho-Minh-Vuong-M4U.mp3">
+                                <img src="~/Content/images/emoilenpho_MinhVuongM4U.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="service-box ">
+                        <div class="service-icon red">
+                            <div>
+                                <h2>Đám cưới nha <span class="badge bg-secondary" style="color:red">  <img src="~/Content/images/imgweb/hot-1.gif" /></span> </h2>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <a href=" ~/Content/music/Dam-Cuoi-Nha-Hong-Thanh-DJ-Mie.mp3">
+                                <img src="~/Content/images/damcuoi.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="service-box">
+                        <div class="service-icon grey">
+                            <div class="front-content">
+                                <div>
+                                    <h2>Thatgril <span class="badge bg-secondary" style="color:red">  <img src="~/Content/images/imgweb/hot-1.gif" /></span> </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <a href=" ~/Content/music/ThatGril.mp3">
+                                <img src="~/Content/images/thatgril.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+@*
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TheLoai.TenTL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenBH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaSi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TacGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayCapNhat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinhAnhBH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UrlBH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoiBH)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TheLoai.TenTL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenBH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaSi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TacGia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayCapNhat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HinhAnhBH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrlBH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoiBH)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+
+                </td>
+            </tr>
+        }
+
+    </table>*@

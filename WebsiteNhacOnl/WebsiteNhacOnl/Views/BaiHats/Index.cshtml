@@ -1,0 +1,204 @@
+﻿@model PagedList.IPagedList<WebsiteNhacOnl.Models.BaiHat>
+
+
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Bài hát";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous">
+<link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css”>
+<link href="~/Content/CSS/StyleBaiHat.css" rel="stylesheet" />
+<link href="~/Content/imagehover.min.css" rel="stylesheet" />
+
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <b style="font-size:14pt">Tìm kiếm bài hát:</b> @Html.TextBox("SearchString")
+                <button> <img src="~/Content/images/imgweb/search_icon.png" height="20" width="20" /> </button>
+            </div>
+            <div class="col-md-6" style="text-align:left;color:dodgerblue">
+                <h2 class="text-center">Music</h2>
+            </div>
+        </div>
+        <hr />
+    }
+    @foreach (var item in Model)
+    {
+<div class="musicSong" onclick="setMusicPlay('/Content/music/@item.UrlBH', '@item.HinhAnhBH', '@item.CaSi', '@item.TacGia')">
+    <div class="col-md-4">
+        <div style="text-align: center; border-bottom: 1px solid maroon; color: dodgerblue">
+            <h3>@item.TenBH</h3>
+        </div>
+        <div class="col-md-8">
+            <figure class="imghvr-push-up">
+                <img src="@Html.DisplayFor(modelItem => item.HinhAnhBH)" style=" width:150px; height:150px " alt="example-image">
+                <figcaption>
+                    <img src="~/Content/images/imgweb/play.png" style=" width: 150px; height: 150px " />
+                </figcaption><a href="javascript:;"></a>
+            </figure>
+        </div>
+        <div class="col-md-4" style="text-align: left">
+            <p>Sáng tác:<br /> <b>@item.TacGia</b> </p>
+            <b>
+                @Html.Raw(@Html.ActionLink("[replacetext]", "Details", new { id = item.Id }).ToHtmlString().Replace("[replacetext]", " <img src=\"/Content/images/imgweb/icon-xem-chi-tiet.png\" height=\"28\">"))
+                <b class="fa fa-download">
+                    @Html.ActionLink("Tải Về", "Download", new { fileName = item.UrlBH })
+                </b>
+            </b>
+
+        </div>
+
+        <div class="col-md-8" style="font-size: 18px; border-top: 1px solid maroon; padding: 2px; text-align: center">
+            <b>@item.CaSi</b>
+        </div>
+        <hr />
+    </div>
+
+</div>
+
+        <script>
+            function setMusicPlay(musicUrl, imgURL, nameSong, singerSong) {
+                var audio = document.getElementById("audio");
+                var image = document.getElementById("showI");
+                var name = document.getElementById("showN");
+                var singer = document.getElementById("showS");
+
+                audio.src = musicUrl;
+                image.src = imgURL;
+                name.innerText = nameSong;
+                singer.innerHTML = singerSong;
+            }
+        </script>
+
+    }
+
+</div>
+@*Tạo lien kết giữa các trang*@
+<br />
+<div style="text-align:right" >
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>
+    
+
+    <div id="playMusic">
+        <hr />
+        <div id="show">
+            <table style="width:100%">
+                <tr style="width:100%">
+                    <td style="width:15%">
+                        <div id="musicDisc">
+                            <img id="showI" src="~/Content/images/imgweb/icon_nhac_audio.jpg" class="img-circle" style="width:45px;height:45px" />
+                        </div>
+                    </td>
+                    <td style="width:15%">
+                        <div id="musicInfo">
+                            <b id="showN"></b> <br />
+                            <i id="showS"></i>
+                        </div>
+                    </td>
+                    <td style="width:70%">
+                        <audio style="width:100%" id="audio" preload="auto" autoplay="true" loop="true" controls>
+                            <source src="~/Content/music/a.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            function setShowAlbum(nameAlbum) {
+                var listSong = document.getElementsByClassName("musicSong");
+                for (var i = 0; i < listSong.length; i++) {
+                    if (listSong[i].getElementsByTagName('i')[0].innerText != '(' + nameAlbum + ')') {
+                        listSong[i].style.display = "none";
+                    }
+                    else {
+                        listSong[i].style.display = "block";
+                    }
+                }
+            }
+        </script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </div>
+
+
+
+
+
+
+
+    @*
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TheLoai.TenTL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenBH)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CaSi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TacGia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgayCapNhat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HinhAnhBH)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UrlBH)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LoiBH)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TheLoai.TenTL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenBH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CaSi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TacGia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgayCapNhat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HinhAnhBH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UrlBH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LoiBH)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>*@

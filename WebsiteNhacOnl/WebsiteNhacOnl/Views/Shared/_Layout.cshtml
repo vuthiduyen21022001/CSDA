@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="~/Content/Layout/images/logo32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="~/Content/Layout/images/logo16x16.png" sizes="16x16" />
+    <title>@ViewBag.Title - Music Online</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!--stylesheet-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="~/Content/Layout/styles/styles.css" rel="stylesheet" />
+    <link href="~/Content/Layout/styles/custom-responsive-styles.css" rel="stylesheet" type="text/css">
+    <!--scripts-->
+    <script type="text/javascript" src="~/Content/Layout/scripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Content/Layout/scripts/all-plugins.js"></script>
+    <script type="text/javascript" src="~/Content/Layout/scripts/plugins-activate.js"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+</head>
+<body id="page-top">
+    <!-- Navigation -->
+    <div class="logo">
+        <img src="~/Content/images/imgweb/logo1-.png" width="100px" height="60px" />
+        <i> Music online</i>
+    </div>
+    <a class="menu-toggle rounded" href="#">
+        <i class="fa fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-nav-item">
+                <a class='bx bx-home-alt icon' href="@Url.Action("Index", "Home")"> Trang chủ</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class='bx bxs-playlist icon' href=" @Url.Action("Index", "BaiHats")"> Bài hát</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class='bx bx-category-alt icon' href="@Url.Action("Index", "TheLoais")"> Thể loại</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class='bx bx-download icon' href="@Url.Action("Index", "TaiNhacs")"> Tải nhạc</a>
+            </li>
+            @*<li class="sidebar-nav-item">
+                    <a class="smooth-scroll" href="#Testimonials">Testimonials</a>
+                </li>*@
+            <li class="sidebar-nav-item">
+                <a class='bx bxs-contact icon' href="@Url.Action("Create", "PhanHoiNDs")"> Liên hệ</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="Testimonials" class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="customers-testimonials" class="owl-carousel">
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <img src="~/Content/images/damcuoi.jpg"  style="width:400px; height:310px"/>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <img src="~/Content/images/imgweb/bn_kem-duyen-2.jpg" style="width:400px; height:310px"/>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="shadow-effect">
+                                <img src="~/Content/images/bn_pho-da-len-den.jpg" style="width:400px; height:310px" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Header Ends -->
+    <section class="content-section text-center">
+        <div class="container">
+            <div class="render">
+                @RenderBody()
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="place">
+                        <span class="text" style="font-size: 14px; color: hsl(182, 68%, 76%)"><i class='bx bx-map'></i> Hutech - Đại học Công nghệ Tp.HCM</span>
+                    </div>
+                    <div class="phone">
+                        <span class="text" style="font-size: 14px; color: hsl(182, 68%, 76%)"><i class='bx bx-phone-call'></i> 0123456789</span>
+                    </div>
+                    <div class="phone">
+                        <span class="text" style="font-size: 14px; color: hsl(182, 68%, 76%)"><i class='bx bx-mail-send'></i> demo@gmail.com</span>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a class="social-link rounded-circle text-white mr-3" href="javascript:void(0)">
+                                <i class="fa fa-envelope-square" aria-hidden="true"></i>
+
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="social-link rounded-circle text-white mr-3" href="javascript:void(0)">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="social-link rounded-circle text-white" href="javascript:void(0)">
+                                <i class="fa fa-gamepad" aria-hidden="true"></i>
+
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <p>&copy; @DateTime.Now.Year - Music online</p>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>
+
+
+
+@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="/Content/images/imgweb/logo1-.png">
+
+        <title>@ViewBag.Title - Music Online</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    --======== CSS ========
+    <link href="~/Content/CSS/StyleLayout.css" rel="stylesheet" />
+     Link Swiper's CSS
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    --===== Boxicons CSS =====
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    </head>
+    <body>
+        <nav class="sidebar">
+            <header>
+                <div class="image-text">
+                    <span class="image">
+                        <img src="~/Content/images/imgweb/logo1-.png" alt="logoMusic">
+                    </span>
+
+                    <div class="text logo-text">
+                        <span class="name">Nghe nhạc</span>
+                        <span class="profession">Online</span>
+                    </div>
+                </div>
+
+                <i class='bx bx-chevron-right toggle'></i>
+            </header>
+
+            <div class="menu-bar">
+                <div class="menu">
+                    <ul class="menu-links">
+                        <li class="nav-link">
+                            <a href="@Url.Action("Index", "Home")">
+                                <i class='bx bx-home-alt icon'></i>
+                                <span class="text nav-text">Trang chủ</span>
+
+                            </a>
+                        </li>
+
+                        <li class="nav-link">
+                            <a href="@Url.Action("Index", "BaiHats")">
+                                <i class='bx bxs-playlist icon'></i>
+                                <span class="text nav-text">Bài hát</span>
+
+                            </a>
+                        </li>
+
+                        <li class="nav-link">
+                            <a href="@Url.Action("Index", "TheLoais")">
+
+                                <i class='bx bx-category-alt icon'></i>
+                                <span class="text nav-text">Thể loại</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-link">
+                            <a href="@Url.Action("Index", "TaiNhacs")">
+                                <i class='bx bx-download icon'></i>
+                                <span class="text nav-text">Tải nhạc</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-link">
+                            <a href="@Url.Action("Create", "PhanHoiNDs")">
+                                <i class='bx bxs-contact icon'></i>
+                                <span class="text nav-text">Liên hệ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bottom-content close">
+                    <li class="mode">
+                        <div class="sun-moon">
+                            <i class='bx bx-moon icon moon'></i>
+                            <i class='bx bx-sun icon sun'></i>
+                        </div>
+                        <span class="mode-text text">Chế độ</span>
+
+                        <div class="toggle-switch">
+                            <span class="switch"></span>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </nav>
+
+        <section class="home">
+     Swiper
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="~/Content/images/imgweb/banner1.jpg" style="height: 100%; width: 90%"></div>
+            <div class="swiper-slide"><img src="~/Content/images/imgweb/banner2.jpg" style="height: 100%; width: 90%"></div>
+            <div class="swiper-slide"><img src="~/Content/images/imgweb/banner3.jpg" style="height: 100%; width: 90%"></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+     Swiper JS
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+     Initialize Swiper
+    <script>
+                var swiper = new Swiper(".mySwiper", {
+                    spaceBetween: 30,
+                    centeredSlides: true,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                });
+            </script>
+
+            <div class="text"> @RenderBody()</div>
+            <div class="main-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="left box text" style=" color: hsl(182, 68%, 76%)">
+                                <div class="content">
+                                    <p> </p>
+                                    <center>
+                                        <script>var myVar = setInterval(function () { myTimer() }, 1000); function myTimer() { var d = new Date(); var t = d.toLocaleTimeString(); document.getElementById("h").innerHTML = t; }</script>
+                                        <span id="h"></span>
+                                        <script type="text/javascript">
+                                            n = new Date(); if (n.getTimezoneOffset() == 0) t = n.getTime() + (7 * 60 * 60 * 1000); else t = n.getTime(); n.setTime(t); var dn = new Array("Chủ nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"); d = n.getDay(); m = n.getMonth() + 1; y = n.getFullYear()
+                                            document.write(dn[d] + ", " + (n.getDate() < 10 ? "0" : "") + n.getDate() + "/" + (m < 10 ? "0" : "") + m + "/" + y)
+                                        </script>
+                                    </center>
+                                    <style>
+                                        #h {
+                                            font-weight: 400;
+                                            display: block;
+                                            font-size: 16px;
+                                            margin: 0 0 5px;
+                                            letter-spacing: 5px;
+                                        }
+                                    </style>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="center box">
+                                <div class="content">
+                                    <div class="place">
+                                        <span class="text" style="font-size: 14px; color: hsl(182, 68%, 76%)"><i class='bx bx-map'></i> Hutech - Đại học Công nghệ Tp.HCM</span>
+                                    </div>
+                                    <div class="phone">
+                                        <span class="text" style="font-size: 14px; color: hsl(182, 68%, 76%)"><i class='bx bx-phone-call'></i> 0123456789</span>
+                                    </div>
+                                    <div class="phone">
+                                        <span class="text" style="font-size: 14px; color: hsl(182, 68%, 76%)"><i class='bx bx-mail-send'></i> demo@gmail.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="right box">
+                                <div class="content">
+                                    <div class="social" style="display: flex; align-items: center;">
+                                        <a href="https://www.facebook.com/"><span><i class='bx bxl-facebook' style="font-size: 40px; background-color: rgb(9, 109, 152)"></i></span></a>
+                                        <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoidmkifQ%3D%3D%22%7D"><span><i class='bx bxl-twitter' style="font-size: 40px; background-color: hsl(209, 79%, 57%)"></i></span></a>
+                                        <a href="https://www.instagram.com/"><span><i class='bx bxl-instagram-alt' style="font-size: 40px; background-color: rgb(240, 78, 189) "></i></span></a>
+                                        <a href="https://www.youtube.com/index?hl=vi"><span><i class='bx bxl-youtube' style="font-size: 40px; background-color: rgb(239, 24, 24) "></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <script>
+            var curDate = new Date();
+
+            // Ngày hiện tại
+            var curDay = curDate.getDate();
+
+            // Tháng hiện tại
+            var curMonth = curDate.getMonth() + 1;
+
+            // Năm hiện tại
+            var curYear = curDate.getFullYear();
+
+            // Gán vào thẻ HTML
+            document.getElementById('current-time').innerHTML = curDay + "/" + curMonth + "/" + curYear;
+        </script>
+
+        <script src="~/Content/JS/Layout.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+
+    </body>
+    </html>*@
+@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - Music Online</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Music Online", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Bài Hát", "Index", "BaiHats")</li>
+                        <li>@Html.ActionLink("Thể Loại", "Index", "TheLoais")</li>
+                        <li>@Html.ActionLink("Tải Nhạc", "Index", "TaiNhacs")</li>
+                        <li>@Html.ActionLink("Liên hệ", "Create", "PhanHoiNDs")</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container body-content">
+
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Music online</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>*@

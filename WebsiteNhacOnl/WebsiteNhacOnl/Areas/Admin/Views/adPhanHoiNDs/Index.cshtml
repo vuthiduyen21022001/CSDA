@@ -1,0 +1,56 @@
+﻿@model IEnumerable<WebsiteNhacOnl.Models.PhanHoiND>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+<h2 style="text-align:center;font-size:32px;color:blue">PHẢN HỒI</h2>
+
+<a class="btn btn-success" href="@Url.Action("adreport")">Xuất(.pdf)</a>
+
+<table class="table" style="border: 1px solid #A9A9A9; border-radius: 4px; text-align: center;">
+    <tr style="border: 1px solid #A9A9A9">
+        <th style="border: 1px solid #A9A9A9;">
+            Họ tên
+        </th>
+        <th style="border: 1px solid #A9A9A9;">
+            Năm sinh
+        </th>
+        <th style="border: 1px solid #A9A9A9;">
+            SĐT
+        </th>
+        <th style="border: 1px solid #A9A9A9;">
+            Mail
+        </th>
+
+        <th style="border: 1px solid #A9A9A9;">
+            Thao tác
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr style="border: 1px solid #A9A9A9;">
+            <td style="border: 1px solid #A9A9A9;">
+                @Html.DisplayFor(modelItem => item.HoTen)
+            </td>
+            <td style="border: 1px solid #A9A9A9;">
+                @Html.DisplayFor(modelItem => item.NamSinh)
+            </td>
+            <td style="border: 1px solid #A9A9A9;">
+                @Html.DisplayFor(modelItem => item.Sdt)
+            </td>
+            <td style="border: 1px solid #A9A9A9;">
+                @Html.DisplayFor(modelItem => item.Mail)
+            </td>
+            <td id="action" style=" text-decoration: initial; border:1px solid #A9A9A9">
+                @Html.Raw(@Html.ActionLink("[replacetext]", "Details", new { id = item.Id }).ToHtmlString().Replace("[replacetext]", " <img src=\"/Content/images/imgweb/details.png\" height=\"25\">"))
+                @Html.Raw(@Html.ActionLink("[replacetext]", "Delete", new { id = item.Id }).ToHtmlString().Replace("[replacetext]", " <img src=\"/Content/images/imgweb/delete.png\" height=\"25\">"))
+            </td>
+        </tr>
+    }
+</table>
+
+

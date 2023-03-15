@@ -1,0 +1,111 @@
+﻿@model WebsiteNhacOnl.Models.TaiNhac
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+<h2 style="margin-left:160px;">Sửa Tải Nhạc</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="margin-left:250px;">
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            <dl>
+                <dt>
+                    Tên Nhạc
+                </dt>
+            </dl>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenNhac, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenNhac, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <dl>
+                <dt>
+                    File
+                </dt>
+            </dl>
+
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.File, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.File, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <dl>
+                <dt>
+                    Size (KB)
+                </dt>
+            </dl>
+
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Size, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <dl>
+                <dt>
+                    Type
+                </dt>
+            </dl>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+
+            <p class="create" style="color:black;font-size:24px; font-weight:400">
+                <input type="submit" value="Lưu" class="btn btn-default" />
+
+            </p>
+        </div>
+    </div>
+}
+<hr />
+
+<div style="margin-left:160px;">
+    @Html.ActionLink("Trở lại", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<style>
+    .create {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+        .create:hover {
+            background-color: wheat;
+        }
+</style>

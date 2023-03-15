@@ -1,0 +1,76 @@
+﻿@model IEnumerable<WebsiteNhacOnl.Models.BaiHat>
+
+@{
+    ViewBag.Title = "adreport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>adreport</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TheLoai.TenTL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenBH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaSi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TacGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayCapNhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhAnhBH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrlBH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoiBH)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TheLoai.TenTL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenBH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaSi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TacGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayCapNhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhAnhBH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrlBH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoiBH)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,83 @@
+﻿@model WebsiteNhacOnl.Models.BaiHat
+
+@{
+    ViewBag.Title = "Chi tiết bài hát";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css”>
+<link href="~/Content/CSS/StyleDetails.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="story__images">
+                <img src="@Html.DisplayFor(model => model.HinhAnhBH)" alt="" class="story__img">
+                <div class="story__square"></div>
+            </div>
+            <audio controls style="border-style: outset;">
+                <source src="horse.ogg" type="audio/ogg">
+                <source src="/Content/music/@Html.DisplayFor(model => model.UrlBH)" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="col-md-8">
+            <div class="rightDetails">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TenBH)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TenBH)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CaSi)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CaSi)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TacGia)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TacGia)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NgayCapNhat)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NgayCapNhat)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.LoiBH)
+                    </dt>
+
+                    <dd>
+                        @Html.TextAreaFor(model => model.LoiBH, new { htmlAttributes = new { @class = "form-control" }, cols = "60", rows = "15" })
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                <b class="fa fa-reply">
+                    @Html.ActionLink("Trở về", "Index")|
+                </b>
+
+                <b class="fa fa-download">
+                    @Html.ActionLink("Tải Về", "Download", new { fileName = Model.UrlBH })
+                </b>
+
+            </p>
+        </div>
+    </div>
+</div>

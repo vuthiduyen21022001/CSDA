@@ -1,0 +1,50 @@
+﻿@model WebsiteNhacOnl.Models.TaiNhac
+
+@{
+    ViewBag.Title = "Chi tiết nhạc tải";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Tải Nhạc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNhac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNhac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.File)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.File)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+    </dl>
+</div>
+<b class="fas fa-reply">
+    @Html.ActionLink("Trở về", "Index")
+</b>

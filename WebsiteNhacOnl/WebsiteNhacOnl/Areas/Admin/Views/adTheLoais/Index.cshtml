@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WebsiteNhacOnl.Models.TheLoai>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<br />
+<h2 style="text-align:center;font-size:32px;color:blue">THÊM THỂ LOẠI</h2>
+@Html.Raw(@Html.ActionLink("[replacetext]", "Create").ToHtmlString().Replace("[replacetext]", " <img src=\"/Content/images/imgweb/them.png\" height=\"40\"> "))
+
+<table class="table" style="border: 1px solid #A9A9A9; border-radius: 4px; text-align: center;">
+    <tr>
+        <th style="border: 1px solid #A9A9A9">
+           Tên thể loại
+        </th>
+        <th>
+           Thao tác
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="border: 1px solid #A9A9A9;">
+                @Html.DisplayFor(modelItem => item.TenTL)
+            </td>
+            <td id="action" style=" text-decoration: initial; border:1px solid #A9A9A9">
+
+                @Html.Raw(@Html.ActionLink("[replacetext]", "Edit", new { id = item.Id }).ToHtmlString().Replace("[replacetext]", " <img src=\"/Content/images/imgweb/edit.png\" height=\"25\">"))
+                @Html.Raw(@Html.ActionLink("[replacetext]", "Details", new { id = item.Id }).ToHtmlString().Replace("[replacetext]", " <img src=\"/Content/images/imgweb/details.png\" height=\"25\">"))
+                @Html.Raw(@Html.ActionLink("[replacetext]", "Delete", new { id = item.Id }).ToHtmlString().Replace("[replacetext]", " <img src=\"/Content/images/imgweb/delete.png\" height=\"25\">"))
+            </td>
+        </tr>
+    }
+
+</table>

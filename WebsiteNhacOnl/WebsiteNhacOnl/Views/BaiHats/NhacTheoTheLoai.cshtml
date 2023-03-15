@@ -1,0 +1,104 @@
+﻿@model IEnumerable<WebsiteNhacOnl.Models.BaiHat>
+
+@{
+    ViewBag.Title = "NhacTheoTheLoai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="~/Content/imagehover.min.css" rel="stylesheet" />
+<a href="@Url.Action("Index","TheLoais",new { })" style="font-size:20px"></a>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="musicSong" onclick="setMusicPlay('/Content/music/@item.UrlBH', '@item.HinhAnhBH', '@item.CaSi', '@item.TacGia')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4" style="padding: 10px 1px 1px 1px; text-align: right">
+                            <figure class="imghvr-push-up">
+                                <img src="@Html.DisplayFor(modelItem => item.HinhAnhBH)" style=" width:60px; height:60px " alt="example-image">
+                                <figcaption>
+                                    <img src="~/Content/images/imgweb/play.png" style=" width:60px; height:60px " />
+                                </figcaption><a href="javascript:;"></a>
+                            </figure>
+                        </div>
+                        <div class="col-md-4" style=" color: DodgerBlue; font-family: Times New Roman, Times, serif; padding: 1px 1px 1px 5px">
+                            <h4> @Html.DisplayFor(modelItem => item.TenBH) </h4>
+                            <i>
+                                (@Html.DisplayFor(modelItem => item.CaSi)) <br />
+                                @Html.Raw(@Html.ActionLink("[replacetext]", "Details", new { id = item.Id }).ToHtmlString().Replace("[replacetext]", " <img src=\"/Content/images/imgweb/icon-xem-chi-tiet.png\" height=\"28\">"))
+                            </i>
+
+                        </div>
+                        <div class="col-md-4 p-3" style="padding: 1px 1px 1px 1px; text-align: left">
+                            <b class="fa fa-download">
+                                @Html.ActionLink("Tải Về", "Download", new { fileName = item.UrlBH })
+                            </b>
+                        </div>
+
+                    </div>
+                </div>
+                
+
+            </div>
+
+            <script>
+                function setMusicPlay(musicUrl, imgURL, nameSong, singerSong) {
+                    var audio = document.getElementById("audio");
+                    var image = document.getElementById("showI");
+                    var name = document.getElementById("showN");
+                    var singer = document.getElementById("showS");
+
+                    audio.src = musicUrl;
+                    image.src = imgURL;
+                    name.innerText = nameSong;
+                    singer.innerHTML = singerSong;
+                }
+            </script>
+
+
+        }
+    </div>
+    <div id="playMusic">
+        <hr />
+        <div id="show">
+            <table style="width:100%">
+                <tr style="width:100%">
+                    <td style="width:15%">
+                        <div id="musicDisc">
+                            <img id="showI" src="~/Content/images/imgweb/icon_nhac_audio.jpg" class="img-circle" style="width:45px;height:45px" />
+                        </div>
+                    </td>
+                    <td style="width:15%">
+                        <div id="musicInfo">
+                            <b id="showN"></b> <br />
+                            <i id="showS"></i>
+                        </div>
+                    </td>
+                    <td style="width:70%">
+                        <audio style="width:100%" id="audio" preload="auto" autoplay="true" loop="true" controls>
+                            <source src="~/Content/music/a.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            function setShowAlbum(nameAlbum) {
+                var listSong = document.getElementsByClassName("musicSong");
+                for (var i = 0; i < listSong.length; i++) {
+                    if (listSong[i].getElementsByTagName('i')[0].innerText != '(' + nameAlbum + ')') {
+                        listSong[i].style.display = "none";
+                    }
+                    else {
+                        listSong[i].style.display = "block";
+                    }
+                }
+            }
+        </script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </div>
+</div>
+
+

@@ -1,0 +1,149 @@
+﻿@model WebsiteNhacOnl.Models.PhanHoiND
+
+@{
+    ViewBag.Title = "Liên hệ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* Create two columns/boxes that floats next to each other */
+        nav {
+            border-right: 2px solid;
+            float: left;
+            width: 40%;
+            height: 100%; /* only for demonstration, should be removed */
+            padding: 20px;
+            font-size: 15px;
+        }
+
+            /* Style the list inside the menu */
+            nav ul {
+                list-style-type: none;
+                padding:0px;
+            }
+
+
+        article {
+            padding-top: 20px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            border-inline: 2px;
+            float: left;
+            width: 60%;
+            height: 100%; /* only for demonstration, should be removed */
+            font-size: 15px;
+        }
+
+        /* Clear floats after the columns */
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<div class="container">
+    <div class="block-heading">
+        <h2>Liên hệ</h2>
+    </div>       
+    <section>
+        <nav>
+            <div>
+                <h3>Thông Tin Liên Hệ Khác</h3>
+                <ul style="text-align: left;">
+                    <li><img src="~/Content/images/imgweb/1.png " style="font-family: 'Courier New', Courier, monospace; " alt="icon " /> Hutech_Đại học Công Nghệ Tp.HCM</li>
+                    <li><img src="~/Content/images/imgweb/2.png " alt="icon " /> Phone: +84 12345678</li>
+                    <li><img src="~/Content/images/imgweb/3.png " alt="icon " /> Email: demo@email.com</li>
+                </ul>
+            </div>
+            <br />
+            <div class="contact map" style="background-color:transparent; ">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7836.855276149955!2d106.77661791443828!3d10.85504300434586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527c3debb5aad%3A0x5fb58956eb4194d0!2zxJDhuqFpIGjhu41jIEh1dGVjaCAtIEtodSBF!5e0!3m2!1svi!2s!4v1653879813567!5m2!1svi!2s "
+                        width="400 " height="380 " style="border:2px; "></iframe>
+            </div>
+
+        </nav>
+        <article>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4 style="text-align:center">MUSIC ONLINE VUI LÒNG ĐƯỢC HỖ TRỢ</h4><br />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.HoTen, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.HoTen, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NamSinh, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.NamSinh, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NamSinh, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Sdt, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.Sdt, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Sdt, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Mail, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.Mail, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DiaChi, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NdPhanHoi, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9" style="margin-left: 73px;">
+                            @Html.TextAreaFor(model => model.NdPhanHoi, new { htmlAttributes = new { @class = "form-control" }, cols = "50", rows = "5" })
+                            @Html.ValidationMessageFor(model => model.NdPhanHoi, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10" style="font-size: 15px;">
+                            <input type="submit" value="Gửi phản hồi" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("Trở lại", "Index", "Home")
+            </div>
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
+
+        </article>
+    </section>
+</div>
